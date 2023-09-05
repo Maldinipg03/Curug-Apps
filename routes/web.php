@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+
 
 route::get('/', 'HomeController@index')
     ->name('index.index');
@@ -36,32 +36,18 @@ Route::post('/addimage', 'AddimageController@store')
 // end halam tambah gambar
 
 // route untuk menghapus gambar
-// Route::get('/delete/{id}', [AddimageController::class, 'delete'])
-//     ->name('delete');
-
 Route::get('/delete/{id}', 'AddimageController@delete')
     ->name('delete')->middleware('login_auth');
-
-
 // end route menghapus gambar
 
 
 // route untuk menampilkan data sebelum dilakukan edit
-// Route::get('/tampilfoto/{id}', [AddimageController::class, 'tampilfoto'])
-//     ->name('tampilfoto');
 Route::get('/tampilfoto/{id}', 'AddimageController@tampilfoto')
     ->name('tampilfoto')->middleware('login_auth');
-
 // end route untuk menampilkan data sebelum dilakukan edit
 
 
 // Route untuk edit data
-// Route::put('/edit/{id}', [AddimageController::class, 'update'])
-//     ->name('edit');
-// Route::patch('/edit/{id}', 'AddimageController@update')
-//     ->name('edit');
-// Route::post('/update/{id}', [AddimageController::class, 'update'])
-//     ->name('update');
 Route::post('/update/{id}', 'AddimageController@update')
     ->name('update')->middleware('login_auth');
 // end Route untuk edit data
@@ -104,3 +90,18 @@ Route::get('/addakun/create', 'AdminController@create')
 
 Route::post('/addakun', 'AdminController@store')
     ->name('addakun.store')->middleware('login_auth');
+
+//Rote hapus akun
+Route::get('/deleteakun/{id}', 'AdminController@delete')
+    ->name('delete')->middleware('login_auth');
+
+// route untuk menampilkan data sebelum dilakukan edit
+Route::get('/tampilakun/{id}', 'AdminController@tampilakun')
+    ->name('tampilakun')->middleware('login_auth');
+// end route untuk menampilkan data sebelum dilakukan edit
+
+
+// Route untuk edit data
+Route::post('/edit/{id}', 'AdminController@update')
+    ->name('update')->middleware('login_auth');
+// end Route untuk edit data

@@ -14,31 +14,38 @@
 </head>
 
 <body>
-    <div class="row">
-        <div class="col-md-8 col-xl-6">
-            <h1>Tambah Akun Admin</h1>
-            <hr>
-            <form action="{{ route('addakun.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="form-group">
-                    <label for="nama">username</label>
-                    <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama"
-                        name="nama" value="{{ old('nama') }}">
-                    @error('nama')
-                        <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="text" class="form-control @error('password') is-invalid @enderror" id="password"
-                        name="password" value="{{ old('password') }}">
-                    @error('password')
-                        <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                </div>
 
-                <button type="submit" class="btn btn-primary mb-2">Daftar</button>
-            </form>
+    <div class="container mt-2 mb-2">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-xl-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h1>Tambah Akun Admin</h1>
+                        <hr>
+                        <form action="{{ route('addakun.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="form-group">
+                                <label for="nama">Username</label>
+                                <input type="text" class="form-control @error('nama') is-invalid @enderror"
+                                    id="nama" name="nama" value="{{ old('nama') }}">
+                                @error('nama')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="text" class="form-control mb-2 @error('password') is-invalid @enderror"
+                                    id="password" name="password" value="{{ old('password') }}">
+                                @error('password')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <button type="submit" class="btn btn-primary mb-2">Tambah</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     </div>

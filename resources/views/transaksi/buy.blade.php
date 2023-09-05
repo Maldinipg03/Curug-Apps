@@ -15,13 +15,12 @@
 
 <body>
     <div class="container">
-        <h1 class="judul">Beli tiket</h1>
+        <h3 class="judul">Pembelian Tiket Wisata Curug Cipendok</h3>
         <div class="card">
             {{-- <div class="card-header">
                 Featured
             </div> --}}
             <div class="card-body">
-                <h5 class="card-title">Beli Tikett</h5>
                 <form action="/beli" method="post">
                     @csrf
 
@@ -41,7 +40,7 @@
                             aria-describedby="emailHelp">
                     </div>
 
-                    <button href="#" type="submit" class="btn btn-primary">Bayar Tiket</button>
+                    <button href="#" type="submit" class="btn btn-primary">Beli</button>
                 </form>
             </div>
         </div>

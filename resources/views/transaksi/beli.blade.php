@@ -20,7 +20,7 @@
 
 <body>
     <div class="container">
-        <h1 class="judul">Beli tiket</h1>
+        <h3 class="judul">Detail Pemesanan Pembelian Tiket</h3>
         <div class="card">
             {{-- <div class="card-header">
                 Featured

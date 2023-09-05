@@ -64,20 +64,6 @@ class AddimageController extends Controller
     // fungsi edit data gambar
     public function update(Request $request, $id)
     {
-
-        // $data = addimage::find($id);
-        // $data->update($request->except(['_token', 'nama', 'image']));
-        // // $data->update($request->except(['_token', 'nama', 'image', 'submit', '_method']));
-        // $data->update($request->all());
-        // if ($request->hasFile('image')) {
-        //     $extFile = $request->image->getClientOriginalExtension();
-        //     $namaFile = 'user-' . time() . "." . $extFile;
-        //     File::delete($id->image);
-        //     $path = $request->image->move('assets/images', $namaFile);
-        //     $data->image = $path;
-        // }
-
-        // return redirect()->route('addimage.index')->with('success', 'Data Berhasil Di Edit');
         $validateData = $request->validate([
             'nama' => 'required|min:3|max:50',
             'image' => 'required|image|mimes:png,jpg',

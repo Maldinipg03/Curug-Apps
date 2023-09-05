@@ -14,8 +14,9 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container mt-2">
         <div class="card">
+            <h3 class="judul">Bukti Transaksi Berhasil</h3>
             {{-- <div class="card-header">
                 Featured
             </div> --}}
@@ -50,6 +51,7 @@
             </div>
         </div>
         <p>Note: Tunjukan Bukti pembayaran ini ke petugas penjaga untuk bisa masuk</p>
+        <a href="/">kembali ke menu utama</a>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->

@@ -63,4 +63,44 @@ class AdminController extends Controller
         $request->session()->flash('pesan', 'Penambahan data berhasil');
         return redirect()->route('addakun.akun');
     }
+
+    // hapus akun
+    public function delete($id)
+    {
+        $data = admin::find($id);
+        $data->delete();
+        return redirect()->route('addakun.akun')->with('success', 'AKun Berhasil Di Hapus');
+    }
+
+
+    // fungsi untuk menampilkan data sebelum di edit
+    public function tampilakun($id)
+    {
+        $data = admin::find($id);
+        // dd($data);
+
+
+        return view('addakun.tampil', compact('data'));
+    }
+
+    // fungsi edit data akun
+    public function update(Request $request, $id)
+    {
+        $validateData = $request->validate([
+            'username' => 'required',
+            'password' => 'required',
+
+        ]);
+
+        $ubah = admin::findorfail($id);
+
+        $data = [
+            'username' => $request['username'],
+            'password' => $request['password'],
+        ];
+
+
+        $ubah->update($data);
+        return redirect()->route('addakun.akun');
+    }
 }

@@ -9,38 +9,48 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
     {{-- <link rel="stylesheet" href="css/main.css"> --}}
+
     <title>Curug Cipendok</title>
 </head>
 
 <body>
-    <div class="row">
-        <div class="col-md-8 col-xl-6">
-            <h1>Tambah Gambar Slide</h1>
-            <hr>
-            <form action="{{ route('addimage.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="form-group">
-                    <label for="nama">Nama Lengkap</label>
-                    <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama"
-                        name="nama" value="{{ old('nama') }}">
-                    @error('nama')
-                        <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label for="image">Gambar Profile</label>
-                    <input type="file" class="form-control-file" id="image" name="image">
-                    @error('image')
-                        <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                </div>
+    <div class="container mt-2 mb-2">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card">
+                    <div class="card-body ">
+                        <div class="col">
+                            <h3>Tambah Gambar Slide</h3>
+                            <form action="{{ route('addimage.store') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="nama">Nama Gambar</label>
+                                    <input type="text" class="form-control mb-3 @error('nama') is-invalid @enderror"
+                                        id="nama" name="nama" value="{{ old('nama') }}">
+                                    @error('nama')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="image">Gambar</label>
+                                    <input type="file" class="form-control-file mb-3" id="image" name="image">
+                                    @error('image')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
 
-                <button type="submit" class="btn btn-primary mb-2">Daftar</button>
-            </form>
+                                <button type="submit" class="btn btn-primary mb-2">Tambah</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     </div>
+
 
     {{-- end caresol --}}
 
