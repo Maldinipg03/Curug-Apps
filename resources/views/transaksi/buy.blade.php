@@ -24,6 +24,11 @@
                 <form action="/beli" method="post">
                     @csrf
 
+                    @if (session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
                     <div class="mb-3">
                         <label for="jml" class="form-label">Jumlah Tiket</label>
                         <input type="number" name="jml" class="form-control" id="exampleInputEmail1"
@@ -45,6 +50,8 @@
             </div>
         </div>
     </div>
+    <!-- Menampilkan pesan kesalahan jika ada -->
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 

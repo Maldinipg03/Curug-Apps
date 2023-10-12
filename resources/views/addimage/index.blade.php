@@ -23,7 +23,7 @@
 
 </head>
 
-<body>
+<body class="bg-light">
     <div class="app">
         <div class="menu-toggle">
             <div class="hamburger">
@@ -61,7 +61,7 @@
                                 {{ session()->get('pesan') }}
                             </div>
                         @endif
-                        <div class="table-responsive">
+                        <div class="table-responsive bg-white p-3" style="border-radius: 12px">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>

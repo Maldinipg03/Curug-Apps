@@ -105,3 +105,15 @@ Route::get('/tampilakun/{id}', 'AdminController@tampilakun')
 Route::post('/edit/{id}', 'AdminController@update')
     ->name('update')->middleware('login_auth');
 // end Route untuk edit data
+
+// kirim email
+Route::get('/kirim-email/{order_id}', 'OrderController@kirimEmailPemberitahuan')
+    ->name('kirim-email');
+
+
+// Route::get('/kirim-email/{order_id}', [OrderController::class, 'kirimEmail']);
+
+//fungsi search data
+// Route::post('/search', 'DashboardController@search')
+//     ->name('search')->middleware('login_auth');
+//end fungsi search

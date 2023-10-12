@@ -13,11 +13,9 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/main.css" />
     <script src="https://code.highcharts.com/highcharts.js"></script>
-
-
 </head>
 
-<body>
+<body class="bg-light">
     <div class="app">
         <div class="menu-toggle">
             <div class="hamburger">
@@ -47,7 +45,26 @@
                                 {{ session()->get('pesan') }}
                             </div>
                         @endif
-                        <div class="table-responsive">
+
+
+
+
+                        <div class="table-responsive bg-white p-3 mb-5" style="border-radius: 12px">
+                            {{-- <form action="{{ route('search') }}" method="POST">
+                                @csrf
+                                <div class="input-group input-group-sm mb-3">
+                                    <input type="text" class="form-control" name="nama" aria-label="Nama"
+                                        aria-describedby="inputGroup-sizing-sm">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-primary"><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                            </svg></button>
+                                    </div>
+                                </div>
+                            </form> --}}
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
@@ -67,7 +84,8 @@
                                             <td>{{ $dataorder->email }}</td>
                                             <td>{{ $dataorder->jml }}</td>
                                             <td>{{ $dataorder->status }}</td>
-                                            <td>{{ $dataorder->created_at }}</td>
+                                            <td>{{ date('d/m/Y', strtotime($dataorder->created_at)) }}</td>
+
                                         </tr>
                                     @endforeach
                                 </tbody>
